@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: tantawy
+      changes:
+        - addColumn:
+            tableName: orders
+            schemaName: order_service
+            columns:
+              - column:
+                  name: created_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+                    updatable: false
+              - column:
+                  name: last_modified_date
+                  type: timestamp
+              - column:
+                  name: created_by
+                  type: varchar(255)
+              - column:
+                  name: last_modified_by
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2
+      author: tantawy
+      changes:
+        - addColumn:
+            tableName: order_items
+            schemaName: order_service
+            columns:
+              - column:
+                  name: created_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+                    updatable: false
+              - column:
+                  name: last_modified_date
+                  type: timestamp
+              - column:
+                  name: created_by
+                  type: varchar(255)
+              - column:
+                  name: last_modified_by
+                  type: varchar(255)
